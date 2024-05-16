@@ -1,0 +1,91 @@
+:root {
+    --background1: #865D36;
+    --background2: #5c3f25;
+    --text: #e3e3e3;
+}
+
+html, body {
+    background-color: var(--background1);
+    font-family: "Poetsen One", sans-serif;
+    color: var(--text);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3em;
+}
+
+.title-text {
+    font-size: 4em;
+}
+
+.title-img {
+    width: 25em;
+    margin-bottom: 1em;
+}
+
+.plus-img {
+    width: 5em;
+    margin-left: 10em;
+}
+
+.ma-state-img {
+    width: 20em;
+    margin-left: 4em;
+}
+
+.left {
+    padding: 3em;
+    margin-left: 1em;
+}
+
+.right {
+    padding: 3em;
+    margin-right: 1em;
+}
+
+.pop-growth-container, .immigration-ma-container, .immigration-pctg-latam-container {
+    background-color: var(--background2);
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 3em;
+}
+
+.pop-growth-text, .map-text, .immigration-ma-text, .immigration-pctg-region-text, 
+.immigration-latam-region-text, .socio-economic-text, .workforce-text, .sources-text {
+    padding: 1em;
+    font-size: 2em;
+    margin: 1em 8em;
+    text-align: center;
+}
+
+.conclusion-container {
+    background-color: var(--background2);
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 3em 0;
+}
+
+.conclusion-text {
+    font-size: 1.5em;
+    margin: 1em 6em;
+    text-align: center;
+}
+
+.conclusion-imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conclusion-img1, .conclusion-img2, .conclusion-img3 {
+    width: 20em;
+    margin: 1em 1em;
+}
