@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 
-     <!--GSAP-->
-     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <!--Vega Lite-->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
+
+    <!--GSAP-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
 </head>
 <body>
     
@@ -20,54 +25,50 @@
             <h1 class="title-text">
                 Exploring the Latino Labor Migration in Massachusetts
             </h1>
+            <img style="width: 40%" src="../imgs/heart.png">
         </div>
         <div class="right">
-            <img class="title-img" src="/imgs/title-img.png">
+            <img class="title-img" src="../imgs/title-img.png">
             <br>
-            <img class="plus-img" src="/imgs/plus.png">
+            <img class="plus-img" src="../imgs/plus.png">
             <br>
-            <img class="ma-state-img" src="/imgs/MA.png">
+            <img class="ma-state-img" src="../imgs/MA.png">
         </div>
     </div>
 
     <!--Latino Population Growth in MA-->
     <div class="pop-growth-container">
         <h3 class="pop-growth-text">
-            <span style="text-decoration: underline;">MA</span> has witnessed a 
-            <span style="text-decoration: underline;">significant population growth</span>, 
-            with Hispanic/Latino individuals comprising 13.1%
-            of the total state population as of 2023...
+            <span style="color: #EFB11D">MA</span> has witnessed a 
+            <span style="text-decoration: underline; color: #EFB11D">significant population growth of Latinos</span>, 
+            with an percent change increase of <span style="text-decoration: underline; color: #EFB11D">44.4%</span> since
+            2010.
         </h3>
-        <div class="pop-growth-graph">
-            <h4 class="pop-growth-subtext">
-                But, why is this? &#x1f914;
-            </h4>
-        </div>
+        <div id="pop-growth-graph"></div>
+        <h4 class="pop-growth-subtext">
+            But, why is this? &#x1f914;
+        </h4>
     </div>
 
     <!--Latino Migration Map-->
     <div class="map-container">
-        <div class="left">
-            <h3 class="map-text">
-                This is because Latinos recognized better work opportunities 
-                and environment to strive for success, especially in the late 1900s
-            </h3>
-        </div>
-        <div class="right">
-            <div class="map">
-            </div>
-        </div>
+        <h3 class="map-text">
+            This is because Latinos recognized better work opportunities 
+            and environment to strive for success. <br><br>Here is a map visualization of MA, 
+            showing the Latino population in each county.
+        </h3>
+        <iframe class="map" src="../imgs/map.html" width="1000" height="500"></iframe>
     </div>
 
     <!--Immigrants Coming into MA-->
     <div class="immigration-ma-container">
         <h3 class="immigration-ma-text">
-            We can also see that there is a great percent increase in immigrants
+            We can also see that there is a great <span style="color: #EFB11D; text-decoration: underline">percent increase</span> in immigrants
             coming into MA, from 1990 to 2022.
         </h3>
-        <div class="immigration-ma-donut-container">
-            <div class="immigration-ma-donut1"></div>
-            <div class="immigration-ma-donut2"></div>
+        <div class="donuts">
+            <div id="immigration-ma-donut1"></div>
+            <div id="immigration-ma-donut2"></div>
         </div>
     </div>
 
@@ -75,40 +76,40 @@
     <div class="immigration-pctg-region-container">
         <div class="left">
             <h3 class="immigration-pctg-region-text">
-                And 40.9% of those immigrants correspond to those born in Latin America, as of 2023.
+                And <span style="text-decoration: underline; color: #EFB11D">40.9%</span> of those immigrants correspond to those born in 
+                <span style="color: #EFB11D">Latin America</span>, as of 2022.
             </h3>
         </div>
         <div class="right">
-            
+            <div id="immigration-pctg-region-chart"></div>
         </div>
     </div>
 
     <!--Immigration Percentage by LATAM countries-->
-    <div class="immigration-pctg-latam-container">
-        <div class="left">
-            <h3 class="immigration-latam-region-text">
-                Breaking it down even further, we have the immigration 
-                percentages per country of origin in Latin America.
-            </h3>
-        </div>
-        <div class="right">
-            
-        </div>
+    <div class="immigration-pctg-region-latam-container">
+        <h3 class="immigration-pctg-region-latam-text">
+            And, from the top 10 countries that immigrate into MA, <br> <span style="color: #EFB11D">Dominican Republic,
+            Haiti, El Salvador, Colombia, and Brazil</span> are mentioned.
+        </h3>
+        <div id="immigration-pctg-region-latam-chart"></div>
     </div>
-    
-    <h3 class="socio-economic-text">
-        We saw the growth in population in MA, especially from Latinos. 
-        Let's also explore the impact in the socio-economic aspect
-    </h3>
-
-    <!---->
 
     <!--Workforce-->
     <div class="workforce-container">
         <h3 class="workforce-text">
-            In terms of workforce, over 63% of Latinos work in Building & Grounds, 
+            In terms of <span style="text-decoration: underline; color: #EFB11D">workforce</span>, over <span style="text-decoration: underline; color: #EFB11D">63% of Latinos</span> work in 
+            blue collar occupations, construction, healthcare, agriculture, and many more.
         </h3>
-        <div class="workforce-graph">
+        
+        <div id="workforce-donut"></div>
+        <div class="workforce-donuts">
+            <div id="workforce-donut1"></div>
+            <div id="workforce-donut2"></div>
+            <div id="workforce-donut3"></div>
+            <div id="workforce-donut4"></div>
+            <div id="workforce-donut5"></div>
+            <div id="workforce-donut6"></div>
+            <div id="workforce-donut7"></div>
         </div>
     </div>
 
@@ -118,14 +119,14 @@
             It's important to recognize the influence of Latinos in the state of MA.
             There are more foreign-born and U.S.-born Latinos in recent years, and the population
             is expected to continue growing, as well as educational attainment, success in 
-            STEM-related fields, healthcare, and many more essential areas. It's important to recognize that
+            STEM-related fields, healthcare, and many more important areas. It's important to recognize that
             MA is advancing rapidly, and Boston is a living testimony of that growth, as it has become 
             more culturally diverse. 
         </p>
         <div class="conclusion-imgs">
-            <img class="conclusion-img1" src="/imgs/latino1.png">
-            <img class="conclusion-img2" src="/imgs/latino2.png">
-            <img class="conclusion-img3" src="/imgs/latino3.png">
+            <img class="conclusion-img1" src="../imgs/latino1.png">
+            <img class="conclusion-img2" src="../imgs/latino2.png">
+            <img class="conclusion-img3" src="../imgs/latino3.png">
         </div>
     </div>
 
@@ -135,17 +136,20 @@
             <span style="text-decoration: underline">Sources:</span>
         </h3>
         <ul class="sources-list">
-            <li class="source"></li>
-            <li class="source"></li>
-            <li class="source"></li>
-            <li class="source"></li>
-            <li class="source"></li>
-            <li class="source"></li>
-            <li class="source"></li>
-            <li class="source"></li>
+            <li class="source">PlaygroundAI: AI-generated images</li>
+            <li class="source">American Immigration Council</li>
+            <li class="source">Census Gov.</li>
+            <li class="source">Migration Policy Institute</li>
+            <li class="source">The Importance of Immigrants to Boston's Continued Prosperity, by Alvaro Lima</li>
         </ul>
+        <br><br><br><br><br>
     </div>
 
 </body>
     <script src="app.js"></script>
+    <script src="../vega-lite/ma_population.js"></script>
+    <script src="../vega-lite/donut_chart.js"></script>
+    <script src="../vega-lite/immigration_by_region.js"></script>
+    <script src="../vega-lite/immigration_by_region_latam.js"></script>
+    <script src="../vega-lite/donut_charts_workforce.js"></script>
 </html>

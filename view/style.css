@@ -13,7 +13,23 @@ html, body {
     padding: 0;
 }
 
-.title-container {
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+  
+body::-webkit-scrollbar-track {
+    background: var(--text);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #d66e0c;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #733600;
+}
+
+.title-container, .immigration-pctg-region-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,7 +65,8 @@ html, body {
     margin-right: 1em;
 }
 
-.pop-growth-container, .immigration-ma-container, .immigration-pctg-latam-container {
+.pop-growth-container, .immigration-ma-container, 
+.immigration-pctg-region-latam-container {
     background-color: var(--background2);
     margin: 0;
     width: 100%;
@@ -57,12 +74,53 @@ html, body {
     padding-bottom: 3em;
 }
 
-.pop-growth-text, .map-text, .immigration-ma-text, .immigration-pctg-region-text, 
-.immigration-latam-region-text, .socio-economic-text, .workforce-text, .sources-text {
-    padding: 1em;
+.pop-growth-text, .map-text, .immigration-ma-text, 
+.socio-economic-text, .workforce-text, .sources-text {
+    padding: 1em 1em 0 1em;
     font-size: 2em;
     margin: 1em 8em;
     text-align: center;
+}
+
+#pop-growth-graph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pop-growth-subtext {
+    float: right;
+    font-size: 1.1em;
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
+    border: none;
+}
+
+
+.immigration-pctg-region-text, .immigration-pctg-region-latam-text {
+    font-size: 2em;
+    padding: 1em;
+    margin: 1em;
+}
+
+#workforce-donut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2em;
+}
+
+#workforce-donut1, #workforce-donut2, #workforce-donut3,
+#workforce-donut4, #workforce-donut5, #workforce-donut6,
+#workforce-donut7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
 }
 
 .conclusion-container {
@@ -88,4 +146,22 @@ html, body {
 .conclusion-img1, .conclusion-img2, .conclusion-img3 {
     width: 20em;
     margin: 1em 1em;
+}
+
+.donuts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+}
+
+.workforce-donuts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#immigration-pctg-region-chart, #immigration-pctg-region-latam-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
